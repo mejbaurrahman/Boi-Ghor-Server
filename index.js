@@ -22,6 +22,9 @@ app.get("/products/:id", (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Welcome to Boi Ghor Server");
+});
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
