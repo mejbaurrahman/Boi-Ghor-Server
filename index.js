@@ -12,12 +12,12 @@ app.get("/products", (req, res) => {
   res.json(products);
 });
 
-app.get("/products/:id", (req, res) => {
-  const productId = req.params.id;
-  const product = products.findOne(productId);
-
-  if (product) {
-    res.json(product);
+app.get("/products/:bookId", (req, res) => {
+  const productId = req.params.bookId;
+  const specificBook = products?.find((b) => b?.bookId == productId);
+  // const product = products.find(productId);
+  if (specificBook) {
+    res.json(specificBook);
   } else {
     res.status(404).json({ message: "Product not found" });
   }
