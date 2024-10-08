@@ -5,6 +5,7 @@ const products = require("./books.json");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+//add middleware
 app.use(cors());
 
 app.get("/products", (req, res) => {
